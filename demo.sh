@@ -1,3 +1,5 @@
+echo "Press q to quit the current demo and proceed to the next one."
+echo "Press s to pause the scene."
 CMD=../bin/birdFountain
 cd demo;
 $CMD < demo/demo1.in > /dev/null
