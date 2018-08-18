@@ -5,7 +5,7 @@
 # Makefile variables
 
 # which make
-MAKE = gmake
+#MAKE = gmake
 
 # which compiler
 CC = g++
@@ -23,7 +23,7 @@ INCLDIRS = -I/usr/cs-local/include/cs371include -I/usr/X11R6/include \
 # where to find libraries
 LIBDIRS = -L/usr/cs-local/lib/cs371lib -L/usr/X11R6/lib -L/sw/lib
 GLLIBS = -lglut -lGLU -lGL
-XLIBS = -lXmu -lXi -lXext -lX11
+XLIBS = -lXext -lX11 #-lXmu -lXi 
 
 # which system libraries to include
 LIBS = -llinAlg $(GLLIBS) $(XLIBS) -lm 

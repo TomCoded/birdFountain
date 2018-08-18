@@ -1,4 +1,5 @@
 #include "SinFunNode.h"
+#include <math.h>
 //SinFunNode.h (C)  Tom White
 //does sin(childNode)
 

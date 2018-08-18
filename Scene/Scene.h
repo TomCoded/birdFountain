@@ -49,7 +49,7 @@ public:
   void draw();
 
   //Scene Functions
-  std::vector<NodeGL *> * Scene::getNodeGLs();
+  std::vector<NodeGL *> * getNodeGLs();
   Camera * getCamera();
   int getWindowWidth();
   int getWindowHeight();
@@ -99,7 +99,7 @@ private:
   // skip the parameters of any non-implemented scene file feature
   // assumes that parameter lists are either single strings w/o white space
   // or properly parenthetically nested
-  ifstream& skipDescription(ifstream& ifs);
+  std::ifstream& skipDescription(std::ifstream& ifs);
 };
 
 #endif SCENE_H

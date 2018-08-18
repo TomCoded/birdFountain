@@ -233,7 +233,7 @@ void Scene::ReadFile(std::string fileName) {
   //  std::cin >> fileName;
 
   // create an input filestream
-  ifstream inFile(fileName.c_str());
+  std::ifstream inFile(fileName.c_str());
 
   int wireFrame=0;
 
@@ -723,7 +723,7 @@ std::vector<NodeGL *> * Scene::getNodeGLs()
 //returns a pointer to the current camera
 Camera * Scene::getCamera()
 {
-  if(cameras->begin()) return (*(cameras->begin()));
+  if(cameras->size()) return (*(cameras->begin()));
   else return 0;
 }
 
@@ -818,7 +818,7 @@ void Scene::initWindowInfo(void)
 // skip the parameters of any non-implemented scene file feature
 // assumes that parameter lists are either single strings w/o white space
 // or properly parenthetically nested
-ifstream& Scene::skipDescription(ifstream& ifFile) {
+std::ifstream& Scene::skipDescription(std::ifstream& ifFile) {
   char input;
 
   if(!ifFile.eof()) {

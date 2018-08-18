@@ -1,15 +1,15 @@
 cd Scene;
-SceneTest < demo/demo1.in > /dev/null
-SceneTest < demo/demo2.in > /dev/null 
-SceneTest < demo/demo3.in > /dev/null
-SceneTest < demo/demo4.in > /dev/null
-SceneTest < demo/demo6.in > /dev/null
-SceneTest < demo/demo7.in > /dev/null
-SceneTest < demo/demo8.in > /dev/null
-SceneTest < demo/demo9.in > /dev/null
-SceneTest < demo/demot.in > /dev/null
-SceneTest < demo/demo10.in > /dev/null
-SceneTest < demo/demof.in > /dev/null
+./SceneTest < demo/demo1.in > /dev/null
+./SceneTest < demo/demo2.in > /dev/null 
+./SceneTest < demo/demo3.in > /dev/null
+./SceneTest < demo/demo4.in > /dev/null
+./SceneTest < demo/demo6.in > /dev/null
+./SceneTest < demo/demo7.in > /dev/null
+./SceneTest < demo/demo8.in > /dev/null
+./SceneTest < demo/demo9.in > /dev/null
+./SceneTest < demo/demot.in > /dev/null
+./SceneTest < demo/demo10.in > /dev/null
+./SceneTest < demo/demof.in > /dev/null
 cd ..
 
 

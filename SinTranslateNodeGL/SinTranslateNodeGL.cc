@@ -5,6 +5,7 @@
 #include "SinTranslateNodeGL.h"
 #include <Defs.h>
 #include <GL/glut.h>
+#include <math.h>
 
 SinTranslateNodeGL::SinTranslateNodeGL():
   amplitude(1),

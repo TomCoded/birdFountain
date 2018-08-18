@@ -1,6 +1,7 @@
 //FunParser.cc
 //(C)  Tom White
 // parses functions
+#include <iostream>
 #include "FunParser.h"
 
 FunParser::FunParser() {}

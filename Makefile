@@ -15,8 +15,11 @@ FunTranslateNodeGL FunOrientNodeGL \
 FunTransformNodeGL
 
 # directories containing programs: prog name equals directory name!
-ALLPROGDIRS = basic basic2 basic3D animate3D mouse3D menu3D keyboard3D planet \
-	goodplanet greatplanet rectplanet rectplanet2 
+ALLPROGDIRS = SceneTest
+
+birdFountain: allClassObjs
+	cd Scene && $(MAKE) SceneTest
+	cd ..
 
 # rule to compile all class.o object files
 allClassObjs :

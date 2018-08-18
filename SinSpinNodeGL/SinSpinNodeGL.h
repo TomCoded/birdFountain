@@ -9,6 +9,7 @@
 #include <NodeGL/NodeGL.h>
 #include <MaterialNodeGL/MaterialNodeGL.h>
 #include <Point3Dd.h>
+#include <math.h>
 
 class SinSpinNodeGL : public NodeGL
 {

@@ -1,8 +1,0 @@
-Program rectplanet combines all of the ideas from the previous programs
-(up to keyboard3D), and makes (slightly) more interesting use of transforms
-to simulate a rectplanet circling a sun.  An additional feature is camera zoom,
-which allows us to move back and forth along the line of sight.  Zooming out
-far enough will cause the scene to slowly be clipped by the back of the
-view volume.
-
-
