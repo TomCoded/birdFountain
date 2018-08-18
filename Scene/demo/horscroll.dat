@@ -1,0 +1,47 @@
+//A sample scene file
+windowDims (400,400)
+sceneAmbient (0.2,0.2,0.2)
+camera ((0,0,12),(0,0,0),(0,1,0),1.04703,1,1,150)
+dirLight ((1,1,1),(.1,.1,.1),(.6,.6,.6),(.6,.6,.6))
+pointLight ((5,5,4),(.5,.5,.5),(.7,.7,.7),(0.3,0.3,0.3))
+include include/mats.cus
+include include/formulae.cus
+include include/gravity.cus
+insertcustom gold
+P(t) 20*sin(t/8) 0 0 0.1 0 50
+ spin ((0,1,0),5)
+  P(t) 0 4.9*(t^2)*(0-1)+10*t 0 0.07 0 2
+   sphere (1,15,15)
+  pop
+ pop
+pop
+insertcustom pewter
+P(t) 20*sin(t/8) 0 0 0.1 5 50
+ spin ((0,1,0),5)
+  P(t) 0 4.9*(t^2)*(0-1)+10*t 0 0.07 0 2
+   sphere (1,15,15)
+  pop
+ pop
+pop
+insertcustom bronze
+P(t) 20*sin(t/8) 0 0 0.1 10 50
+ spin ((0,1,0),5)
+  P(t) 0 4.9*(t^2)*(0-1)+10*t 0 0.07 0 2
+   sphere (1,15,15)
+  pop
+ pop
+pop
+insertcustom silver
+P(t) 20*sin(t/8) 0 0 0.1 15 50
+ spin ((0,1,0),5)
+  P(t) 0 4.9*(t^2)*(0-1)+10*t 0 0.07 0 2
+   sphere (1.25,15,15)
+  pop
+ pop
+pop
+
+
+
+
+
+

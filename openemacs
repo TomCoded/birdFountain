@@ -1,0 +1,5 @@
+emacs NodeGL/NodeGL.cc&
+emacs NodeGL/NodeGL.h&
+emacs RotateNodeGL/RotateNodeGL.cc&
+emacs Scene/Scene.cc&
+emacs Scene/Scene.h&

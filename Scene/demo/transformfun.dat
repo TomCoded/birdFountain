@@ -1,0 +1,10 @@
+windowDims (350,350)
+sceneAmbient (0.2,0.2,0.2)
+camera ((0,0,20),(0,0,0),(0,1,0),1.04703,1,1,150)
+dirLight ((1,1,1),(.1,.1,.1),(.6,.6,.6),(.6,.6,.6))
+pointLight ((5,5,4),(.5,.5,.5),(.7,.7,.7),(0.3,0.3,0.3))
+include include/mats.cus
+insertcustom gold
+matrix(t) 1 0 0 0 2^sin(t) t 0 0 0 0 1 0 0 0 0 1 0.1 0 6.28
+  teapot 2
+pop

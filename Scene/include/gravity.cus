@@ -1,0 +1,15 @@
+custom
+P(t) 0 4.9*(t^2)*(0-1) 0 0.1 0 50
+endcustom gravity
+custom 
+P(t) 0 4.9*(t^2)*(0-1) 0 0.1 40 50
+endcustom gravity2
+custom 
+P(t) 0 4.9*(t^2)*(0-1) 0 0.1 30 50
+endcustom gravity3
+custom 
+P(t) 0 4.9*(t^2)*(0-1) 0 0.1 20 50
+endcustom gravity4
+custom 
+P(t) 0 4.9*(t^2)*(0-1) 0 0.1 10 50
+endcustom gravity5

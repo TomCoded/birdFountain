@@ -1,0 +1,63 @@
+//A sample scene file
+windowDims (500,500)
+sceneAmbient (0.2,0.2,0.2)
+camera ((0,0,30),(0,0,0),(0,1,0),1.04703,1,1,150)
+dirLight ((1,1,1),(.1,.1,.1),(.6,.6,.6),(.6,.6,.6))
+pointLight ((5,5,4),(.5,.5,.5),(.7,.7,.7),(3,3,3))
+include materials/includeMats.cus
+custom
+ insertcustom brass
+ spin ((0,1,0),1.0)
+ translate (1.50,-1.5,0) //legs 
+  sphere (0.5,15,15)
+  orient ((0,0,1),(0,-1,0))
+   cone (0.5,10,10,10)
+  pop
+ pop
+ translate (-1.50,-1.5,0)
+  sphere (0.5,15,15)
+  orient ((0,0,1),(0,-1,0))
+   cone (0.5,10,10,10)
+  pop
+ pop
+ sinspin ((1,0,0),0.5,0,5.0) //body
+   translate (0,-1,0)
+     insertcustom polishedSilver
+     scale (2,4,1)
+       sphere (1,20,20)
+     pop
+     translate (0,3,0)
+       orient ((0,0,1),(0,1,0))
+	insertcustom copper	//neck
+         cone (0.5,3,10,10)
+        pop
+     pop
+     translate (0,6,0)
+       sphere (1.5,15,15)
+       cone (0.5,6,10,10) 
+        translate (0.5,0.25,1.0) //eyes
+	insertcustom pewter	
+   	sphere (0.5,15,15)
+       pop
+       translate (-0.5,0.25,1.0)
+	   sphere (0.5,15,15)
+       pop
+     pop
+   pop
+ pop
+ pop
+endcustom woodpecker
+insertcustom woodpecker
+translate (5,0,0)
+ orient ((0,0,1),(-1,0,0))
+  spin ((0,1,0),3)
+   insertcustom woodpecker
+  pop
+ pop
+pop
+      
+
+
+
+
+

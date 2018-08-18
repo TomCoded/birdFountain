@@ -1,0 +1,53 @@
+Ideas for features to add:
+
+Josh Ain:
+randomizer - probably as part of mathematical expressions
+camera motions
+
+Steve:
+autooverlappolygons - autocreate n objects spun by a certain amount
+relative to each other for odd lighting effects; subset of for loops, perhaps.
+Making new class addition to SceneFileReader easy.
+
+Andrew:
+Mouse actions trigger screen actions of some sort
+
+Brent:
+Light motions
+vertex paths with bezier corners
+for loops in scene files
+colors based on sort-of greenish...
+
+Me:
+ability to toggle lighting sets for a scene
+dynamic/runtime plugin system
+#define(s) statements to trivialize new class addition to FileReader()
+functions of > 1 variable
+aliasing of words in scenefiles
+user defined polygons
+user defined regular polygons (e.g. regpoly numfaces)
+if() nodeGLs
+Mouse actions to move some objects (inspired from Andrew)
+Ability to randomize material properties/colors
+Ability to define input Scenefile language and re-write in terms of
+one or another such languages.
+Scenefile optimizer to minimize computation / stack depth
+NodeGLs that store the current matrix when created so that they can
+simply dump it on the stack when it's their turn through.
+Fix function parser.  Add support for:
+   - multiple variables
+   - leading minus sign
+   - starting with parenthesized expression
+   - logarithms
+   - user-defined functions
+user defined nodes as a function of one or more variables
+
+Bill:
+Camera automated flythroughs
+texture mapping
+Frenet frame camera motions
+
+misc:
+object transparencies
+
+

@@ -1,0 +1,155 @@
+]0;/home/cs-students/04thw/371/3proj/whiteProg3for x in Camera Ray Material TransformMaker NodeGL PopNodeGL MaterialNodeGL TranslationFormNodeGL Scene functions LightNodeGL PlanetNodeGL TransformNodeGL OrbitNodeGL SpinNodeGL OrientNodeGL TorusNodeGL TeapotNodeGL CubeNodeGL IcosahedronNodeGL OctahedronNodeGL TetrahedronNodeGL DodecahedronNodeGL ConeNodeGL RotateNodeGL SinTranslateNodeGL SinSpinNodeGL CustomNodeGL FunNode VarFunNode SumFunNode MultFunNode DivFunNode PowFunNode SinFunNode CosFunNode FunParser FunTranslateNodeGL FunOrientNodeGL; do \
+	gmake -C $x $x.o; \
+done
+gmake[1]: Entering directory `/home/cs-students/04thw/371/3proj/whiteProg3/Camera'
+gmake[1]: `Camera.o' is up to date.
+gmake[1]: Leaving directory `/home/cs-students/04thw/371/3proj/whiteProg3/Camera'
+gmake[1]: Entering directory `/home/cs-students/04thw/371/3proj/whiteProg3/Ray'
+gmake[1]: `Ray.o' is up to date.
+gmake[1]: Leaving directory `/home/cs-students/04thw/371/3proj/whiteProg3/Ray'
+gmake: *** Material: No such file or directory.  Stop.
+gmake[1]: Entering directory `/home/cs-students/04thw/371/3proj/whiteProg3/TransformMaker'
+gmake[1]: `TransformMaker.o' is up to date.
+gmake[1]: Leaving directory `/home/cs-students/04thw/371/3proj/whiteProg3/TransformMaker'
+gmake[1]: Entering directory `/home/cs-students/04thw/371/3proj/whiteProg3/NodeGL'
+gmake[1]: `NodeGL.o' is up to date.
+gmake[1]: Leaving directory `/home/cs-students/04thw/371/3proj/whiteProg3/NodeGL'
+gmake[1]: Entering directory `/home/cs-students/04thw/371/3proj/whiteProg3/PopNodeGL'
+gmake[1]: `PopNodeGL.o' is up to date.
+gmake[1]: Leaving directory `/home/cs-students/04thw/371/3proj/whiteProg3/PopNodeGL'
+gmake[1]: Entering directory `/home/cs-students/04thw/371/3proj/whiteProg3/MaterialNodeGL'
+gmake[1]: `MaterialNodeGL.o' is up to date.
+gmake[1]: Leaving directory `/home/cs-students/04thw/371/3proj/whiteProg3/MaterialNodeGL'
+gmake[1]: Entering directory `/home/cs-students/04thw/371/3proj/whiteProg3/TranslationFormNodeGL'
+gmake[1]: `TranslationFormNodeGL.o' is up to date.
+gmake[1]: Leaving directory `/home/cs-students/04thw/371/3proj/whiteProg3/TranslationFormNodeGL'
+gmake[1]: Entering directory `/home/cs-students/04thw/371/3proj/whiteProg3/Scene'
+gmake[1]: `Scene.o' is up to date.
+gmake[1]: Leaving directory `/home/cs-students/04thw/371/3proj/whiteProg3/Scene'
+gmake[1]: Entering directory `/home/cs-students/04thw/371/3proj/whiteProg3/functions'
+gmake[1]: `functions.o' is up to date.
+gmake[1]: Leaving directory `/home/cs-students/04thw/371/3proj/whiteProg3/functions'
+gmake[1]: Entering directory `/home/cs-students/04thw/371/3proj/whiteProg3/LightNodeGL'
+gmake[1]: `LightNodeGL.o' is up to date.
+gmake[1]: Leaving directory `/home/cs-students/04thw/371/3proj/whiteProg3/LightNodeGL'
+gmake[1]: Entering directory `/home/cs-students/04thw/371/3proj/whiteProg3/PlanetNodeGL'
+gmake[1]: `PlanetNodeGL.o' is up to date.
+gmake[1]: Leaving directory `/home/cs-students/04thw/371/3proj/whiteProg3/PlanetNodeGL'
+gmake[1]: Entering directory `/home/cs-students/04thw/371/3proj/whiteProg3/TransformNodeGL'
+gmake[1]: `TransformNodeGL.o' is up to date.
+gmake[1]: Leaving directory `/home/cs-students/04thw/371/3proj/whiteProg3/TransformNodeGL'
+gmake[1]: Entering directory `/home/cs-students/04thw/371/3proj/whiteProg3/OrbitNodeGL'
+gmake[1]: `OrbitNodeGL.o' is up to date.
+gmake[1]: Leaving directory `/home/cs-students/04thw/371/3proj/whiteProg3/OrbitNodeGL'
+gmake[1]: Entering directory `/home/cs-students/04thw/371/3proj/whiteProg3/SpinNodeGL'
+gmake[1]: `SpinNodeGL.o' is up to date.
+gmake[1]: Leaving directory `/home/cs-students/04thw/371/3proj/whiteProg3/SpinNodeGL'
+gmake[1]: Entering directory `/home/cs-students/04thw/371/3proj/whiteProg3/OrientNodeGL'
+gmake[1]: `OrientNodeGL.o' is up to date.
+gmake[1]: Leaving directory `/home/cs-students/04thw/371/3proj/whiteProg3/OrientNodeGL'
+gmake[1]: Entering directory `/home/cs-students/04thw/371/3proj/whiteProg3/TorusNodeGL'
+gmake[1]: `TorusNodeGL.o' is up to date.
+gmake[1]: Leaving directory `/home/cs-students/04thw/371/3proj/whiteProg3/TorusNodeGL'
+gmake[1]: Entering directory `/home/cs-students/04thw/371/3proj/whiteProg3/TeapotNodeGL'
+gmake[1]: `TeapotNodeGL.o' is up to date.
+gmake[1]: Leaving directory `/home/cs-students/04thw/371/3proj/whiteProg3/TeapotNodeGL'
+gmake[1]: Entering directory `/home/cs-students/04thw/371/3proj/whiteProg3/CubeNodeGL'
+gmake[1]: `CubeNodeGL.o' is up to date.
+gmake[1]: Leaving directory `/home/cs-students/04thw/371/3proj/whiteProg3/CubeNodeGL'
+gmake[1]: Entering directory `/home/cs-students/04thw/371/3proj/whiteProg3/IcosahedronNodeGL'
+gmake[1]: `IcosahedronNodeGL.o' is up to date.
+gmake[1]: Leaving directory `/home/cs-students/04thw/371/3proj/whiteProg3/IcosahedronNodeGL'
+gmake[1]: Entering directory `/home/cs-students/04thw/371/3proj/whiteProg3/OctahedronNodeGL'
+gmake[1]: `OctahedronNodeGL.o' is up to date.
+gmake[1]: Leaving directory `/home/cs-students/04thw/371/3proj/whiteProg3/OctahedronNodeGL'
+gmake[1]: Entering directory `/home/cs-students/04thw/371/3proj/whiteProg3/TetrahedronNodeGL'
+gmake[1]: `TetrahedronNodeGL.o' is up to date.
+gmake[1]: Leaving directory `/home/cs-students/04thw/371/3proj/whiteProg3/TetrahedronNodeGL'
+gmake[1]: Entering directory `/home/cs-students/04thw/371/3proj/whiteProg3/DodecahedronNodeGL'
+gmake[1]: `DodecahedronNodeGL.o' is up to date.
+gmake[1]: Leaving directory `/home/cs-students/04thw/371/3proj/whiteProg3/DodecahedronNodeGL'
+gmake[1]: Entering directory `/home/cs-students/04thw/371/3proj/whiteProg3/ConeNodeGL'
+gmake[1]: `ConeNodeGL.o' is up to date.
+gmake[1]: Leaving directory `/home/cs-students/04thw/371/3proj/whiteProg3/ConeNodeGL'
+gmake[1]: Entering directory `/home/cs-students/04thw/371/3proj/whiteProg3/RotateNodeGL'
+gmake[1]: `RotateNodeGL.o' is up to date.
+gmake[1]: Leaving directory `/home/cs-students/04thw/371/3proj/whiteProg3/RotateNodeGL'
+gmake[1]: Entering directory `/home/cs-students/04thw/371/3proj/whiteProg3/SinTranslateNodeGL'
+gmake[1]: `SinTranslateNodeGL.o' is up to date.
+gmake[1]: Leaving directory `/home/cs-students/04thw/371/3proj/whiteProg3/SinTranslateNodeGL'
+gmake[1]: Entering directory `/home/cs-students/04thw/371/3proj/whiteProg3/SinSpinNodeGL'
+gmake[1]: `SinSpinNodeGL.o' is up to date.
+gmake[1]: Leaving directory `/home/cs-students/04thw/371/3proj/whiteProg3/SinSpinNodeGL'
+gmake[1]: Entering directory `/home/cs-students/04thw/371/3proj/whiteProg3/CustomNodeGL'
+gmake[1]: `CustomNodeGL.o' is up to date.
+gmake[1]: Leaving directory `/home/cs-students/04thw/371/3proj/whiteProg3/CustomNodeGL'
+gmake[1]: Entering directory `/home/cs-students/04thw/371/3proj/whiteProg3/FunNode'
+gmake[1]: `FunNode.o' is up to date.
+gmake[1]: Leaving directory `/home/cs-students/04thw/371/3proj/whiteProg3/FunNode'
+gmake[1]: Entering directory `/home/cs-students/04thw/371/3proj/whiteProg3/VarFunNode'
+gmake[1]: `VarFunNode.o' is up to date.
+gmake[1]: Leaving directory `/home/cs-students/04thw/371/3proj/whiteProg3/VarFunNode'
+gmake[1]: Entering directory `/home/cs-students/04thw/371/3proj/whiteProg3/SumFunNode'
+gmake[1]: `SumFunNode.o' is up to date.
+gmake[1]: Leaving directory `/home/cs-students/04thw/371/3proj/whiteProg3/SumFunNode'
+gmake[1]: Entering directory `/home/cs-students/04thw/371/3proj/whiteProg3/MultFunNode'
+gmake[1]: `MultFunNode.o' is up to date.
+gmake[1]: Leaving directory `/home/cs-students/04thw/371/3proj/whiteProg3/MultFunNode'
+gmake[1]: Entering directory `/home/cs-students/04thw/371/3proj/whiteProg3/DivFunNode'
+gmake[1]: `DivFunNode.o' is up to date.
+gmake[1]: Leaving directory `/home/cs-students/04thw/371/3proj/whiteProg3/DivFunNode'
+gmake[1]: Entering directory `/home/cs-students/04thw/371/3proj/whiteProg3/PowFunNode'
+gmake[1]: `PowFunNode.o' is up to date.
+gmake[1]: Leaving directory `/home/cs-students/04thw/371/3proj/whiteProg3/PowFunNode'
+gmake[1]: Entering directory `/home/cs-students/04thw/371/3proj/whiteProg3/SinFunNode'
+gmake[1]: `SinFunNode.o' is up to date.
+gmake[1]: Leaving directory `/home/cs-students/04thw/371/3proj/whiteProg3/SinFunNode'
+gmake[1]: Entering directory `/home/cs-students/04thw/371/3proj/whiteProg3/CosFunNode'
+gmake[1]: `CosFunNode.o' is up to date.
+gmake[1]: Leaving directory `/home/cs-students/04thw/371/3proj/whiteProg3/CosFunNode'
+gmake[1]: Entering directory `/home/cs-students/04thw/371/3proj/whiteProg3/FunParser'
+gmake[1]: `FunParser.o' is up to date.
+gmake[1]: Leaving directory `/home/cs-students/04thw/371/3proj/whiteProg3/FunParser'
+gmake[1]: Entering directory `/home/cs-students/04thw/371/3proj/whiteProg3/FunTranslateNodeGL'
+g++ -g -pthread -c FunTranslateNodeGL.cc -I/usr/cs-local/include/cs371include -I/usr/X11R6/include -I..  -I/sw/include
+FunTranslateNodeGL.cc: In method `FunTranslateNodeGL::FunTranslateNodeGL()':
+FunTranslateNodeGL.cc:15: class `FunTranslateNodeGL' does not have any field named `tWrap'
+FunTranslateNodeGL.cc: In method `FunTranslateNodeGL::FunTranslateNodeGL(FunTranslateNodeGL &)':
+FunTranslateNodeGL.cc:29: `tWrap' undeclared (first use this function)
+FunTranslateNodeGL.cc:29: (Each undeclared identifier is reported only once
+FunTranslateNodeGL.cc:29: for each function it appears in.)
+FunTranslateNodeGL.cc:29: `class FunTranslateNodeGL' has no member named `tWrap'
+FunTranslateNodeGL.cc: In method `FunTranslateNodeGL::FunTranslateNodeGL(FunNode *, FunNode *, FunNode *, double, double)':
+FunTranslateNodeGL.cc:44: class `FunTranslateNodeGL' does not have any field named `tWrap'
+FunTranslateNodeGL.cc: At top level:
+FunTranslateNodeGL.cc:53: prototype for `FunTranslateNodeGL::FunTranslateNodeGL(FunNode *, FunNode *, FunNode *, double, double, double)' does not match any in class `FunTranslateNodeGL'
+FunTranslateNodeGL.cc:38: candidates are: FunTranslateNodeGL::FunTranslateNodeGL(FunNode *, FunNode *, FunNode *, double, double)
+FunTranslateNodeGL.cc:21:                 FunTranslateNodeGL::FunTranslateNodeGL(FunTranslateNodeGL &)
+FunTranslateNodeGL.cc:9:                 FunTranslateNodeGL::FunTranslateNodeGL()
+FunTranslateNodeGL.cc: In method `FunTranslateNodeGL::FunTranslateNodeGL(FunNode *, FunNode *, FunNode *, double, double, double)':
+FunTranslateNodeGL.cc:59: class `FunTranslateNodeGL' does not have any field named `tWrap'
+gmake[1]: *** [FunTranslateNodeGL.o] Error 1
+gmake[1]: Leaving directory `/home/cs-students/04thw/371/3proj/whiteProg3/FunTranslateNodeGL'
+gmake[1]: Entering directory `/home/cs-students/04thw/371/3proj/whiteProg3/FunOrientNodeGL'
+g++ -g -pthread -c FunOrientNodeGL.cc -I/usr/cs-local/include/cs371include -I/usr/X11R6/include -I..  -I/sw/include
+FunOrientNodeGL.cc: In method `FunOrientNodeGL::FunOrientNodeGL()':
+FunOrientNodeGL.cc:17: class `FunOrientNodeGL' does not have any field named `tWrap'
+FunOrientNodeGL.cc: In method `FunOrientNodeGL::FunOrientNodeGL(FunOrientNodeGL &)':
+FunOrientNodeGL.cc:34: `tWrap' undeclared (first use this function)
+FunOrientNodeGL.cc:34: (Each undeclared identifier is reported only once
+FunOrientNodeGL.cc:34: for each function it appears in.)
+FunOrientNodeGL.cc:34: `class FunOrientNodeGL' has no member named `tWrap'
+FunOrientNodeGL.cc: In method `FunOrientNodeGL::FunOrientNodeGL(Point3Dd, FunNode *, FunNode *, FunNode *, double, double)':
+FunOrientNodeGL.cc:52: class `FunOrientNodeGL' does not have any field named `tWrap'
+FunOrientNodeGL.cc: At top level:
+FunOrientNodeGL.cc:65: prototype for `FunOrientNodeGL::FunOrientNodeGL(Point3Dd, FunNode *, FunNode *, FunNode *, double, double, double)' does not match any in class `FunOrientNodeGL'
+FunOrientNodeGL.cc:45: candidates are: FunOrientNodeGL::FunOrientNodeGL(Point3Dd, FunNode *, FunNode *, FunNode *, double, double)
+FunOrientNodeGL.cc:25:                 FunOrientNodeGL::FunOrientNodeGL(FunOrientNodeGL &)
+FunOrientNodeGL.cc:10:                 FunOrientNodeGL::FunOrientNodeGL()
+FunOrientNodeGL.cc: In method `FunOrientNodeGL::FunOrientNodeGL(Point3Dd, FunNode *, FunNode *, FunNode *, double, double, double)':
+FunOrientNodeGL.cc:72: class `FunOrientNodeGL' does not have any field named `tWrap'
+gmake[1]: *** [FunOrientNodeGL.o] Error 1
+gmake[1]: Leaving directory `/home/cs-students/04thw/371/3proj/whiteProg3/FunOrientNodeGL'
+gmake: *** [allClassObjs] Error 2
+]0;/home/cs-students/04thw/371/3proj/whiteProg3/Scenegmake: `SceneTest' is up to date.
+(q)uit, (f)ile:

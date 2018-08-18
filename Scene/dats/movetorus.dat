@@ -1,0 +1,32 @@
+//A sample scene file
+windowDims (400,400)
+sceneAmbient (0.2,0.2,0.2)
+camera ((0,0,12),(0,0,0),(0,1,0),1.04703,1,1,150)
+dirLight ((1,1,1),(.1,.1,.1),(.6,.6,.6),(.6,.6,.6))
+pointLight ((5,5,4),(.5,.5,.5),(.7,.7,.7),(0.3,0.3,0.3))
+include include/mats.cus
+include include/formulae.cus
+insertcustom gold
+insertcustom circle
+ insertcustom dcircle
+  scale (1,2,1)
+	teapot 2
+//    cube 2
+  pop
+ pop
+pop
+insertcustom chrome
+//orient ((0,0,1),(0.5,0.5,0))
+insertcustom slowfigureeight
+  insertcustom dslowfigureeight
+     spin ((0,0,1),3)
+      	  torus (0.05,1.03,30,30)
+     pop
+//    cone (1,3,10,10)
+  pop
+pop
+
+
+
+
+

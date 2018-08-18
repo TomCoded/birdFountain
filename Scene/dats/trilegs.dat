@@ -1,0 +1,32 @@
+windowDims (500,500)
+sceneAmbient (0.2,0.2,0.2)
+camera ((1,0,50),(0,0,0),(0,1,0),1.04703,1,1,150)
+dirLight ((1,1,1),(.1,.1,.1),(.6,.6,.6),(.6,.6,.6))
+pointLight ((5,5,4),(.5,.5,.5),(.7,.7,.7),(3,3,3))
+pointLight ((30,12,4),(.5,.5,.5),(.7,.4,.4),(3,3,3))
+include include/mats.cus
+include include/woodpecker.cus
+include include/trileg.cus
+spin ((0,0,1),1)
+translate (-15,-15,0)
+  insertcustom pewter
+  insertcustom trileg
+pop
+translate (-15,15,0)
+  insertcustom polishedSilver
+  insertcustom trileg
+pop
+translate (15,15,0)
+  insertcustom gold
+  insertcustom trileg
+pop
+translate (15,-15,0)
+  insertcustom bronze
+  insertcustom trileg
+pop
+pop
+
+
+
+
+

@@ -1,0 +1,27 @@
+custom
+include materials/copper.mat
+endcustom copper
+custom
+include materials/brass.mat
+endcustom brass
+custom
+include materials/blackPlastic.mat
+endcustom blackPlastic
+custom
+include materials/chrome.mat
+endcustom chrome
+custom
+include materials/gold.mat
+endcustom gold
+custom
+include materials/pewter.mat
+endcustom pewter
+custom
+include materials/bronze.mat
+endcustom bronze
+custom
+include materials/polishedSilver.mat
+endcustom polishedSilver
+custom
+include materials/billTorus.mat
+endcustom billTorusColor

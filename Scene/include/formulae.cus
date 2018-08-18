@@ -1,0 +1,15 @@
+custom
+P(t) 5*cos(t) 5*sin(t) 0 0.1 0 6.28
+endcustom circle
+custom
+orient(t) (0,0,1) 5*sin(t) 5*cos(t) 0 0.1 0 6.28
+endcustom dcircle
+custom
+P(t) 5*sin(t) 2.5*sin(2*t) 0 0.1 0 6.28
+endcustom figureeight
+custom
+P(t) 5*sin(t) 2.5*sin(2*t) 6*sin(t) 0.03 0 12.56
+endcustom slowfigureeight
+custom
+orient(t) (0,0,1) 5*cos(t) 5*cos(2*t) 6*cos(t) 0.03 0 12.56
+endcustom dslowfigureeight

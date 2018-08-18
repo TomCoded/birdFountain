@@ -1,0 +1,71 @@
+windowDims (500,500)
+sceneAmbient (0.2,0.2,0.2)
+camera ((1,0,35),(0,0,0),(0,1,0),1.04703,1,1,150)
+dirLight ((1,1,1),(.1,.1,.1),(.6,.6,.6),(.6,.6,.6))
+pointLight ((5,5,4),(.5,.5,.5),(.7,.7,.7),(3,3,3))
+pointLight ((30,12,4),(.5,.5,.5),(.7,.4,.4),(3,3,3))
+include include/mats.cus
+include include/woodpecker.cus
+orient(t) (0,1,0) sin(t) 1 0 0.1 0 0
+spin ((0,1,0),1)
+ translate (10,0,0)
+  orient ((0,0,1),(-1,0,0))
+    insertcustom woodpecker
+  pop
+ pop
+pop
+spin ((0,1,0),1)
+  translate (-10,0,0)
+   orient ((0,0,1),(1,0,0))
+     insertcustom woodpecker
+   pop
+  pop
+pop
+insertcustom polishedSilver
+spin ((0,1,0),1)
+ translate (0,-12,0)
+  scale (12,1,12)
+    sphere (1,30,30)
+  pop      
+ pop
+pop
+pop
+include include/gravity.cus
+translate (0,20,0)
+  insertcustom gravity
+    dodecahedron
+    translate (3,10,0)
+      spin ((0,1,0),20)
+        P(t) sin(t) cos(t) sin(2*t) 10 0 360
+         cube 1
+        pop
+      pop
+    pop
+  pop
+pop
+translate (0,20,0)
+  insertcustom gravity2
+    tetrahedron
+  pop
+pop
+translate (0,20,0)
+  insertcustom gravity3
+    insertcustom blackPlastic
+    torus (2,4,30,30)
+  pop
+pop
+translate (0,20,0)
+  insertcustom gravity4
+    insertcustom woodpecker
+  pop
+pop
+translate (0,20,0)
+  insertcustom gravity5
+    wireframe on
+    insertcustom teapot
+  pop
+pop
+
+
+
+

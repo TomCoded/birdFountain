@@ -1,0 +1,5 @@
+Program keyboard3D introduces the use of input from keyboard: in this
+case, pressing 's' toggles the shape between a sphere and a torus.
+Otherwise this program behaves as menu3D.
+
+
