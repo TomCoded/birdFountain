@@ -1,4 +1,0 @@
-Program mouse3D introduces the mouse callback function, which is used here
-to stop and start the animated sphere from animate3D.
-
-

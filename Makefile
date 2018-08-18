@@ -1,63 +1,56 @@
-MAKE=make
+include config.mak
 
-# directories containing classes: class name equals directory name!
-ALLCLASSDIRS = Camera Ray TransformMaker NodeGL \
-PopNodeGL MaterialNodeGL TranslationFormNodeGL Scene functions \
-LightNodeGL PlanetNodeGL TransformNodeGL OrbitNodeGL \
-SpinNodeGL OrientNodeGL TorusNodeGL TeapotNodeGL \
-CubeNodeGL IcosahedronNodeGL OctahedronNodeGL \
-TetrahedronNodeGL DodecahedronNodeGL ConeNodeGL \
-RotateNodeGL SinTranslateNodeGL SinSpinNodeGL \
-CustomNodeGL \
-FunNode VarFunNode SumFunNode MultFunNode DivFunNode \
-PowFunNode SinFunNode CosFunNode FunParser \
-FunTranslateNodeGL FunOrientNodeGL \
-FunTransformNodeGL
+#MAKE = gmake
 
-# directories containing programs: prog name equals directory name!
-ALLPROGDIRS = SceneTest
+SRCDIR = src
+OBJDIR = obj
+BINDIR = bin
+TARGET = bin/birdFountain
+INCDIR = inc
+#LDFLAGS=$(LDFLAGS) -lTomFun -llinAlg -lglut -lGLU -lGL -L/usr/lib/x86_64-linux-gnu/ #-lMagick++-6.Q16 -lMagick++
+GTESTFLAGS=-lgtest_main -lgtest -lpthread -lg
 
-birdFountain: allClassObjs
-	cd Scene && $(MAKE) SceneTest
-	cd ..
+CCFILES1 = $(wildcard $(SRCDIR)/*/*.cc) $(wildcard $(SRCDIR)/*/*/*.cc) $(wildcard $(SRCDIR)/*/*/*/*.cc)
+TESTFILES = $(filter-out %Main.cc,$(CCFILES1))
+TESTOBJS = $(TESTFILES:.cc=.o)
+CCFILES = $(filter-out %Test.cc,$(CCFILES1))
+#CCFILES = $(FUNCCS)
+#OBJS = $(addprefix $(OBJDIR)/,$(notdir $(CCFILES:.cc=.o)))
+#use in place .o files on nested src tree to avoid complex Makefile rules.
+OBJS = $(CCFILES:.cc=.o)
+INCLDIRS = -I$(SRCDIR) -I$(INCDIR) $(addprefix -I,$(dir $(CCFILES)))
+#CC = g++
 
-# rule to compile all class.o object files
-allClassObjs :
-	for x in $(ALLCLASSDIRS); do \
-		$(MAKE) -C $$x $$x.o; \
-	done
+#build the library
+$(TARGET): $(OBJS)
+	$(CC) $(CCFLAGS) -o $(TARGET) $(OBJS) $(LDFLAGS)
+	chmod 755 $@
+	#Remember to run make install with permissions on $(prefix)
 
-# rule to compile all classTest programs
-allClassTests :
-	for x in $(ALLCLASSDIRS); do \
-		$(MAKE) -C $$x $${x}Test; \
-	done
+.cc.o:
+	$(CC) $(CCFLAGS) -c -o $@ $^ $(INCLDIRS)
 
-# rule to compile all programs
-allProgs : 
-	for x in $(ALLPROGDIRS); do \
-		$(MAKE) -C $$x $$x; \
-	done
+# install the library
+install: $(TARGET)
+	cp $(TARGET) $(prefix)/bin/
 
-# do it all!
-all : allProgs allClassObjs allClassTests
+all: config.mak $(OBJS) $(TARGET)
 
-# clean-up rules
-clean :
-	for x in $(ALLPROGDIRS) $(ALLCLASSDIRS); do \
-		$(MAKE) -C $$x clean; \
-	done
+copyheaders:
+	cp $(SRCDIR)/*/*.h $(prefix)/include
 
-veryclean :
-	for x in $(ALLPROGDIRS) $(ALLCLASSDIRS); do \
-		$(MAKE) -C $$x veryclean; \
-	done
+mrproper: clean
+	rm -f config.h config.mak
 
-strip :
-	for x in $(ALLPROGDIRS) $(ALLCLASSDIRS); do \
-		$(MAKE) -C $$x strip; \
-	done
+clean:	
+	rm -f $(TARGET)
+	rm -f $(OBJS) $(TESTOBJS)
 
-# tell make that the targets above are not real files
-.PHONY : $(ALLCLASSDIRS) $(ALLPROGDIRS) allClassTests allClassObjs
-.PHONY : allProgs all clean veryclean strip
+test: $(TESTOBJS) 
+	$(CC) $(CCFLAGS) $(TESTOBJS) -o bin/test $(LDFLAGS) $(GTESTFLAGS)
+	bin/test
+
+
+
+
+
