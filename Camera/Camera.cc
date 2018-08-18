@@ -145,7 +145,7 @@ void Camera::rotate(double angle, double du, double dv, double dn) {
 }
 
 // append camera to stream
-ostream& Camera::out(ostream& os) const {
+std::ostream& Camera::out(std::ostream& os) const {
   os << "(" << eye.dehomogenize() << "," << lookAt.dehomogenize() << ",";
   os << up.dehomogenize() << ",";
   os << viewAngle << "," << aspectRatio << "," << near << "," << far;
@@ -155,52 +155,52 @@ ostream& Camera::out(ostream& os) const {
 
 // read camera from stream
 // skips leading and internal whitespace
-istream& Camera::in(istream& is) {
+std::istream& Camera::in(std::istream& is) {
   char c;
   Point3Dd inputPt;
   is >> c;
   if (c != '(') {
-    cout << "Bad format for Camera" << endl;
+    std::cout << "Bad format for Camera" << std::endl;
     exit(1);
   }
   is >> inputPt >> c;
   eye = Point4Dd(inputPt,1);
   if (c != ',') {
-    cout << "Bad format for Camera" << endl;
+    std::cout << "Bad format for Camera" << std::endl;
     exit(1);
   }
   is >> inputPt >> c;
   lookAt = Point4Dd(inputPt,1);
   if (c != ',') {
-    cout << "Bad format for Camera" << endl;
+    std::cout << "Bad format for Camera" << std::endl;
     exit(1);
   }
   is >> inputPt >> c;
   up = Point4Dd(inputPt,1);
   if (c != ',') {
-    cout << "Bad format for Camera" << endl;
+    std::cout << "Bad format for Camera" << std::endl;
     exit(1);
   }
   is >> viewAngle >> c;
   if (c != ',') {
-    cout << "Bad format for Camera" << endl;
+    std::cout << "Bad format for Camera" << std::endl;
     exit(1);
   }
   is >> aspectRatio >> c;
   if (c != ',') {
-    cout << "Bad format for Camera" << endl;
+    std::cout << "Bad format for Camera" << std::endl;
     exit(1);
   }
   is >> near >> c;
   near*=-1;
   if (c != ',') {
-    cout << "Bad format for Camera" << endl;
+    std::cout << "Bad format for Camera" << std::endl;
     exit(1);
   }
   is >> far >> c;
   far*=-1;
   if (c != ')') {
-    cout << "Bad format for Camera" << endl;
+    std::cout << "Bad format for Camera" << std::endl;
     exit(1);
   }
   setCameraCoordSys();
@@ -211,12 +211,12 @@ istream& Camera::in(istream& is) {
 // Non-member functions for the type
 
 // read Camera from stream
-istream& operator>>(istream & is, Camera& c) {
+std::istream& operator>>(std::istream & is, Camera& c) {
   return c.in(is);
 }
 
 // write Camera to stream
-ostream& operator<<(ostream & os, const Camera& c) {
+std::ostream& operator<<(std::ostream & os, const Camera& c) {
   return c.out(os);
 }
 

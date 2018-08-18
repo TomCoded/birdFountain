@@ -6,7 +6,7 @@
 #include <limits.h>
 #include <GL/glut.h>
 #include <Defs.h>
-#include <vector.h>
+#include <vector>
 #include <NodeGL/NodeGL.h>
 #include <Scene/Scene.h>
 #include <TransformMaker/TransformMaker.h>
@@ -329,8 +329,8 @@ void display(void)
   glClear(GL_COLOR_BUFFER_BIT);
   glMatrixMode(GL_MODELVIEW);
   glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-  vector <NodeGL *> * NodeGLs = g_Scene->getNodeGLs();
-  for(vector <NodeGL *>::iterator itNodes = NodeGLs->begin();
+  std::vector <NodeGL *> * NodeGLs = g_Scene->getNodeGLs();
+  for(std::vector <NodeGL *>::iterator itNodes = NodeGLs->begin();
       itNodes!=NodeGLs->end();
       itNodes++)
     {

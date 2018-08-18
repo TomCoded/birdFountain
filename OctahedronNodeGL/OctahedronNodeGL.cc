@@ -22,22 +22,22 @@ void OctahedronNodeGL::ActionGL()
     glutWireOctahedron();
 }
 
-ostream & OctahedronNodeGL::out(ostream& o) const
+std::ostream & OctahedronNodeGL::out(std::ostream& o) const
 {
   return o;
 }
 
-istream & OctahedronNodeGL::in(istream& is)
+std::istream & OctahedronNodeGL::in(std::istream& is)
 {
   return is;
 }
 
-istream& operator>>(istream &is, OctahedronNodeGL& p)
+std::istream& operator>>(std::istream &is, OctahedronNodeGL& p)
 {
   return p.in(is);
 }
 
-ostream& operator<<(ostream &o, const OctahedronNodeGL& p)
+std::ostream& operator<<(std::ostream &o, const OctahedronNodeGL& p)
 {
   return p.out(o);
 }

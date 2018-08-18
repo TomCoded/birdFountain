@@ -22,22 +22,22 @@ void IcosahedronNodeGL::ActionGL()
     glutWireIcosahedron();
 }
 
-ostream & IcosahedronNodeGL::out(ostream& o) const
+std::ostream & IcosahedronNodeGL::out(std::ostream& o) const
 {
   return o;
 }
 
-istream & IcosahedronNodeGL::in(istream& is)
+std::istream & IcosahedronNodeGL::in(std::istream& is)
 {
   return is;
 }
 
-istream& operator>>(istream &is, IcosahedronNodeGL& p)
+std::istream& operator>>(std::istream &is, IcosahedronNodeGL& p)
 {
   return p.in(is);
 }
 
-ostream& operator<<(ostream &o, const IcosahedronNodeGL& p)
+std::ostream& operator<<(std::ostream &o, const IcosahedronNodeGL& p)
 {
   return p.out(o);
 }

@@ -15,12 +15,12 @@ class TetrahedronNodeGL : public NodeGL
 
   void ActionGL();
 
-  istream& in(istream&);
-  ostream& out(ostream&) const;
+  std::istream& in(std::istream&);
+  std::ostream& out(std::ostream&) const;
 
  protected:
 };
 
-istream& operator>>(istream &is, TetrahedronNodeGL& p);
+std::istream& operator>>(std::istream &is, TetrahedronNodeGL& p);
 
-ostream& operator<<(ostream &o, const TetrahedronNodeGL& p);
+std::ostream& operator<<(std::ostream &o, const TetrahedronNodeGL& p);

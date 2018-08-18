@@ -52,7 +52,7 @@ void SinTranslateNodeGL::ActionGL()
 	       );
 }
 
-ostream & SinTranslateNodeGL::out(ostream& o) const
+std::ostream & SinTranslateNodeGL::out(std::ostream& o) const
 {
   o << '(' << translation
     << ',' << amplitude
@@ -62,37 +62,37 @@ ostream & SinTranslateNodeGL::out(ostream& o) const
   return o;
 }
 
-istream & SinTranslateNodeGL::in(istream& is)
+std::istream & SinTranslateNodeGL::in(std::istream& is)
 {
   char c;
   is >> c;
   if(c != '(')
     {
-      cout << "Bad format for SinTranslateNodeGL: " << c << endl;
+      std::cout << "Bad format for SinTranslateNodeGL: " << c << std::endl;
       exit(1);
     }
   is >> translation >> c;
   if(c != ',')
     {
-      cout << "Bad format for SinTranslateNodeGL\n";
+      std::cout << "Bad format for SinTranslateNodeGL\n";
       exit(1);
     }
   is >> amplitude >> c;
   if(c != ',')
     {
-      cout << "Bad format for SinTranslateNodeGL\n";
+      std::cout << "Bad format for SinTranslateNodeGL\n";
       exit(1);
     }
   is >> start >> c;
   if(c != ',')
     {
-      cout << "Bad format for SinTranslateNodeGL\n";
+      std::cout << "Bad format for SinTranslateNodeGL\n";
       exit(1);
     }
   is >> velocity >> c;
   if(c != ')')
     {
-      cout << "Bad format for SinTranslateNodeGL\n";
+      std::cout << "Bad format for SinTranslateNodeGL\n";
       exit(1);
     }
   DEGREES_TO_RADIANS(start);
@@ -101,12 +101,12 @@ istream & SinTranslateNodeGL::in(istream& is)
   return is;
 }
 
-istream& operator>>(istream &is, SinTranslateNodeGL& p)
+std::istream& operator>>(std::istream &is, SinTranslateNodeGL& p)
 {
   return p.in(is);
 }
 
-ostream& operator<<(ostream &o, const SinTranslateNodeGL& p)
+std::ostream& operator<<(std::ostream &o, const SinTranslateNodeGL& p)
 {
   return p.out(o);
 }

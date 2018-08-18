@@ -44,7 +44,7 @@ void TorusNodeGL::ActionGL()
     glutWireTorus(smallRadius,largeRadius,slices,stacks);
 }
 
-ostream & TorusNodeGL::out(ostream& o) const
+std::ostream & TorusNodeGL::out(std::ostream& o) const
 {
   o << '(' << smallRadius 
     << ',' << largeRadius
@@ -54,48 +54,48 @@ ostream & TorusNodeGL::out(ostream& o) const
   return o;
 }
 
-istream & TorusNodeGL::in(istream& is)
+std::istream & TorusNodeGL::in(std::istream& is)
 {
   char c;
   is >> c;
   if(c != '(')
     {
-      cout << "Bad format for TorusNodeGL: " << c << endl;
+      std::cout << "Bad format for TorusNodeGL: " << c << std::endl;
       exit(1);
     }
   is >> smallRadius >> c;
   if(c != ',')
     {
-      cout << "Bad format for TorusNodeGL\n";
+      std::cout << "Bad format for TorusNodeGL\n";
       exit(1);
     }
   is >> largeRadius >> c;
   if(c != ',')
     {
-      cout << "Bad format for TorusNodeGL\n";
+      std::cout << "Bad format for TorusNodeGL\n";
       exit(1);
     }
   is >> slices >> c;
   if(c != ',')
     {
-      cout << "Bad format for TorusNodeGL\n";
+      std::cout << "Bad format for TorusNodeGL\n";
       exit(1);
     }
   is >> stacks >> c;
   if(c != ')')
     {
-      cout << "Bad format for TorusNodeGL\n";
+      std::cout << "Bad format for TorusNodeGL\n";
       exit(1);
     }
   return is;
 }
 
-istream& operator>>(istream &is, TorusNodeGL& p)
+std::istream& operator>>(std::istream &is, TorusNodeGL& p)
 {
   return p.in(is);
 }
 
-ostream& operator<<(ostream &o, const TorusNodeGL& p)
+std::ostream& operator<<(std::ostream &o, const TorusNodeGL& p)
 {
   return p.out(o);
 }

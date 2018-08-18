@@ -21,8 +21,8 @@ class SinTranslateNodeGL : public NodeGL
 
   void ActionGL();
 
-  istream& in(istream&);
-  ostream& out(ostream&) const;
+  std::istream& in(std::istream&);
+  std::ostream& out(std::ostream&) const;
 
  protected:
   double amplitude;
@@ -34,6 +34,6 @@ class SinTranslateNodeGL : public NodeGL
   double velocity;  
 };
 
-istream& operator>>(istream &is, SinTranslateNodeGL& p);
+std::istream& operator>>(std::istream &is, SinTranslateNodeGL& p);
 
-ostream& operator<<(ostream &o, const SinTranslateNodeGL& p);
+std::ostream& operator<<(std::ostream &o, const SinTranslateNodeGL& p);

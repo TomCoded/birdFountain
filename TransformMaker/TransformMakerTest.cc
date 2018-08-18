@@ -6,7 +6,7 @@
 
 void print(const char * string, const Transform4Dd& t)
 {
-  cout << string << " = " << t << endl;
+  std::cout << std::string << " = " << t << std::endl;
 }
 
 int main(void) {

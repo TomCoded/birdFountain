@@ -15,12 +15,12 @@ class IdentityNodeGL : public NodeGL
 
   void ActionGL();
 
-  istream& in(istream&);
-  ostream& out(ostream&) const;
+  std::istream& in(std::istream&);
+  std::ostream& out(std::ostream&) const;
 
  protected:
 };
 
-istream& operator>>(istream &is, IdentityNodeGL& p);
+std::istream& operator>>(std::istream &is, IdentityNodeGL& p);
 
-ostream& operator<<(ostream &o, const IdentityNodeGL& p);
+std::ostream& operator<<(std::ostream &o, const IdentityNodeGL& p);

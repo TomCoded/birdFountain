@@ -15,12 +15,12 @@ class IcosahedronNodeGL : public NodeGL
 
   void ActionGL();
 
-  istream& in(istream&);
-  ostream& out(ostream&) const;
+  std::istream& in(std::istream&);
+  std::ostream& out(std::ostream&) const;
 
  protected:
 };
 
-istream& operator>>(istream &is, IcosahedronNodeGL& p);
+std::istream& operator>>(std::istream &is, IcosahedronNodeGL& p);
 
-ostream& operator<<(ostream &o, const IcosahedronNodeGL& p);
+std::ostream& operator<<(std::ostream &o, const IcosahedronNodeGL& p);

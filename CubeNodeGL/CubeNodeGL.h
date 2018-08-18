@@ -17,13 +17,13 @@ class CubeNodeGL : public NodeGL
 
   void ActionGL();
 
-  istream& in(istream&);
-  ostream& out(ostream&) const;
+  std::istream& in(std::istream&);
+  std::ostream& out(std::ostream&) const;
 
  protected:
   double size;
 };
 
-istream& operator>>(istream &is, CubeNodeGL& p);
+std::istream& operator>>(std::istream &is, CubeNodeGL& p);
 
-ostream& operator<<(ostream &o, const CubeNodeGL& p);
+std::ostream& operator<<(std::ostream &o, const CubeNodeGL& p);

@@ -5,7 +5,7 @@
 //(C)  Tom White
 // Holds the CustomNodeGL class declaration.
 
-#include <vector.h>
+#include <vector>
 #include <string>
 #include <NodeGL/NodeGL.h>
 #include <Point3Dd.h>
@@ -17,7 +17,7 @@ class CustomNodeGL : public NodeGL
  public:
   CustomNodeGL();
   CustomNodeGL(CustomNodeGL&);
-  CustomNodeGL(vector<NodeGL *> * NodeGLs,
+  CustomNodeGL(std::vector<NodeGL *> * NodeGLs,
 	       int nID
 	       );
   ~CustomNodeGL();
@@ -25,24 +25,24 @@ class CustomNodeGL : public NodeGL
   void ActionGL();
 
   //  int nGetID();
-  string szGetName();
+  std::string szGetName();
 
-  istream& in(istream&);
-  ostream& out(ostream&) const;
+  std::istream& in(std::istream&);
+  std::ostream& out(std::ostream&) const;
 
  protected:
   int nID;
   int nRefCount;
   CustomNodeGL * nextNode;
   CustomNodeGL * lastNode;
-  string nodeName;
+  std::string nodeName;
   
-  vector<NodeGL *> * NodeGLs;
+  std::vector<NodeGL *> * NodeGLs;
 
 };
 
-istream& operator>>(istream &is, CustomNodeGL& p);
+std::istream& operator>>(std::istream &is, CustomNodeGL& p);
 
-ostream& operator<<(ostream &o, const CustomNodeGL& p);
+std::ostream& operator<<(std::ostream &o, const CustomNodeGL& p);
 
 #endif

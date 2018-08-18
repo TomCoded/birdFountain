@@ -23,8 +23,8 @@ class MaterialNodeGL : public NodeGL
 
   void ActionGL();
 
-  istream& in(istream&);
-  ostream& out(ostream&) const;
+  std::istream& in(std::istream&);
+  std::ostream& out(std::ostream&) const;
 
  protected:
   //ambient, diffuse, and specular coefficients.
@@ -36,8 +36,8 @@ class MaterialNodeGL : public NodeGL
 
 };
 
-istream& operator>>(istream &is, MaterialNodeGL& m);
+std::istream& operator>>(std::istream &is, MaterialNodeGL& m);
 
-ostream& operator<<(ostream &o, const MaterialNodeGL& m);
+std::ostream& operator<<(std::ostream &o, const MaterialNodeGL& m);
 
 #endif

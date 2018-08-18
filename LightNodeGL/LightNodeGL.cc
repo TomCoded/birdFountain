@@ -52,12 +52,12 @@ LightNodeGL::~LightNodeGL()
 //  original matrix.
 void LightNodeGL::ActionGL()
 {
-  /*  cout << "Light " << LightID 
+  /*  std::cout << "Light " << LightID 
        << "Ambient " << ambient
        << "Diffuse " << diffuse
        << "Specular " << specular
        << "Position " << position
-       << endl;
+       << std::endl;
   */ glEnable(LightID);
   glLightfv(LightID,GL_AMBIENT,ambient.data);
   glLightfv(LightID,GL_DIFFUSE,diffuse.data);

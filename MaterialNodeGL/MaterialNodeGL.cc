@@ -45,7 +45,7 @@ void MaterialNodeGL::ActionGL()
   glMaterialf(GL_FRONT,GL_SHININESS,specExp);
 }
 
-ostream & MaterialNodeGL::out(ostream& o) const
+std::ostream & MaterialNodeGL::out(std::ostream& o) const
 {
   o << '(' << ambient 
     << ',' << diffuse
@@ -54,48 +54,48 @@ ostream & MaterialNodeGL::out(ostream& o) const
     << ')';
 }
 
-istream & MaterialNodeGL::in(istream& is)
+std::istream & MaterialNodeGL::in(std::istream& is)
 {
   char c;
   is >> c;
   if(c != '(')
     {
-      cout << "Bad format for MaterialNodeGL\n";
+      std::cout << "Bad format for MaterialNodeGL\n";
       exit(1);
     }
   is >> ambient >> c;
   if(c != ',')
     {
-      cout << "Bad format for MaterialNodeGL\n";
+      std::cout << "Bad format for MaterialNodeGL\n";
       exit(1);
     }
   is >> diffuse >> c;
   if(c != ',')
     {
-      cout << "Bad format for MaterialNodeGL\n";
+      std::cout << "Bad format for MaterialNodeGL\n";
       exit(1);
     }
   is >> specular >> c;
   if(c != ',')
     {
-      cout << "Bad format for MaterialNodeGL\n";
+      std::cout << "Bad format for MaterialNodeGL\n";
       exit(1);
     }
   is >> specExp >> c;
   if(c != ')')
     {
-      cout << "Bad format for MaterialNodeGL\n";
+      std::cout << "Bad format for MaterialNodeGL\n";
       exit(1);
     }
   return is;
 }
 
-istream& operator>>(istream &is, MaterialNodeGL& m)
+std::istream& operator>>(std::istream &is, MaterialNodeGL& m)
 {
   return m.in(is);
 }
 
-ostream& operator<<(ostream &o, const MaterialNodeGL& m)
+std::ostream& operator<<(std::ostream &o, const MaterialNodeGL& m)
 {
   return m.out(o);
 }

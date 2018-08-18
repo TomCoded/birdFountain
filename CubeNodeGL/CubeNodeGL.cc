@@ -32,24 +32,24 @@ void CubeNodeGL::ActionGL()
     glutWireCube(size);
 }
 
-ostream & CubeNodeGL::out(ostream& o) const
+std::ostream & CubeNodeGL::out(std::ostream& o) const
 {
   o << size;
   return o;
 }
 
-istream & CubeNodeGL::in(istream& is)
+std::istream & CubeNodeGL::in(std::istream& is)
 {
   is >> size;
   return is;
 }
 
-istream& operator>>(istream &is, CubeNodeGL& p)
+std::istream& operator>>(std::istream &is, CubeNodeGL& p)
 {
   return p.in(is);
 }
 
-ostream& operator<<(ostream &o, const CubeNodeGL& p)
+std::ostream& operator<<(std::ostream &o, const CubeNodeGL& p)
 {
   return p.out(o);
 }

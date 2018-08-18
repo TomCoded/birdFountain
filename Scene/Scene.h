@@ -41,7 +41,7 @@ public:
   // Scene Procedures
 
   // Read contents of a scene file, skipping over unimplemented features
-  void ReadFile(string fileName);
+  void ReadFile(std::string fileName);
 
   void setWindowSize(int x, int y);
 
@@ -49,7 +49,7 @@ public:
   void draw();
 
   //Scene Functions
-  vector<NodeGL *> * Scene::getNodeGLs();
+  std::vector<NodeGL *> * Scene::getNodeGLs();
   Camera * getCamera();
   int getWindowWidth();
   int getWindowHeight();
@@ -77,16 +77,16 @@ protected:
   int * myLightIDs;
 
   //A list of all the camera available
-  vector<Camera *> * cameras;
-  vector<LightNodeGL *> * LightNodeGLs;
+  std::vector<Camera *> * cameras;
+  std::vector<LightNodeGL *> * LightNodeGLs;
   int currentCamera;
 
   //We want a vector of all NodeGL objects; we refer to them by
   //pointers because they are actually derived objects.
-  vector<NodeGL *> * NodeGLs;
+  std::vector<NodeGL *> * NodeGLs;
 
   //A list of the Custom nodes
-  vector<CustomNodeGL *> * CustomNodeGLs;
+  std::vector<CustomNodeGL *> * CustomNodeGLs;
 
   //helper functions.  We keep these around to provide an abstraction
   //layer in case we want to change implementation later.  Also, they

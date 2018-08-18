@@ -5,7 +5,7 @@
 #include "CustomNodeGL.h"
 #include <Defs.h>
 #include <GL/glut.h>
-#include <vector.h>
+#include <vector>
 #include <NodeGL/NodeGL.h>
 
 CustomNodeGL::CustomNodeGL():
@@ -35,13 +35,13 @@ CustomNodeGL::CustomNodeGL(CustomNodeGL &other):
 	}
       //now finder is the last node using the NodeGL vector
       if(finder->nextNode)
-	cerr << "WARNING! NODE NON-EMPTY! (CustomNodeGL.cc)\n";
+	std::cerr << "WARNING! NODE NON-EMPTY! (CustomNodeGL.cc)\n";
       finder->nextNode=this;
       nRefCount = finder->nRefCount+1;
     }
 }
 
-CustomNodeGL::CustomNodeGL(vector<NodeGL *> * NodeGLs, int nID):
+CustomNodeGL::CustomNodeGL(std::vector<NodeGL *> * NodeGLs, int nID):
   NodeGLs(NodeGLs),
   nID(nID),
   nRefCount(0),
@@ -56,7 +56,7 @@ CustomNodeGL::~CustomNodeGL()
     //no other instances of CustomNode are using the same
     //vector
     {
-      vector<NodeGL *>::iterator itDestroyer = 
+      std::vector<NodeGL *>::iterator itDestroyer = 
 	NodeGLs->begin();
       while(itDestroyer != NodeGLs->end())
 	{
@@ -80,7 +80,7 @@ CustomNodeGL::~CustomNodeGL()
 void CustomNodeGL::ActionGL()
 {
   if(nID!=-1) //don't do anything if uninitialized!!!
-    for(vector <NodeGL *>::iterator itNodes = NodeGLs->begin();
+    for(std::vector <NodeGL *>::iterator itNodes = NodeGLs->begin();
 	itNodes!=NodeGLs->end();
 	itNodes++)
       {
@@ -95,30 +95,30 @@ int CustomNodeGL::nGetID()
 }
 */
 
-string CustomNodeGL::szGetName()
+std::string CustomNodeGL::szGetName()
 {
   return nodeName;
 }
 
-ostream & CustomNodeGL::out(ostream& o) const
+std::ostream & CustomNodeGL::out(std::ostream& o) const
 {
   o << nodeName;
   return o;
 }
 
-istream & CustomNodeGL::in(istream& is)
+std::istream & CustomNodeGL::in(std::istream& is)
 {
   char c;
   is >> nodeName;
   return is;
 }
 
-istream& operator>>(istream &is, CustomNodeGL& p)
+std::istream& operator>>(std::istream &is, CustomNodeGL& p)
 {
   return p.in(is);
 }
 
-ostream& operator<<(ostream &o, const CustomNodeGL& p)
+std::ostream& operator<<(std::ostream &o, const CustomNodeGL& p)
 {
   return p.out(o);
 }

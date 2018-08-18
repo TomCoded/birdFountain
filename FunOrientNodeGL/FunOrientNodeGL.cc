@@ -105,17 +105,17 @@ void FunOrientNodeGL::ActionGL()
       t=0;
 }
 
-ostream & FunOrientNodeGL::out(ostream& o) const
+std::ostream & FunOrientNodeGL::out(std::ostream& o) const
 {
-  o << "FunOrient at address " << this << endl;
+  o << "FunOrient at address " << this << std::endl;
   return o;
 }
 
-istream & FunOrientNodeGL::in(istream& is)
+std::istream & FunOrientNodeGL::in(std::istream& is)
 {
-  string funX;
-  string funY;
-  string funZ;
+  std::string funX;
+  std::string funY;
+  std::string funZ;
   is >> fromAxis;
   is >> funX;
   is >> funY;
@@ -130,12 +130,12 @@ istream & FunOrientNodeGL::in(istream& is)
   return is;
 }
 
-istream& operator>>(istream &is, FunOrientNodeGL& p)
+std::istream& operator>>(std::istream &is, FunOrientNodeGL& p)
 {
   return p.in(is);
 }
 
-ostream& operator<<(ostream &o, const FunOrientNodeGL& p)
+std::ostream& operator<<(std::ostream &o, const FunOrientNodeGL& p)
 {
   return p.out(o);
 }

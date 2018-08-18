@@ -44,7 +44,7 @@ void ConeNodeGL::ActionGL()
     glutWireCone(radius,height,slices,stacks);
 }
 
-ostream & ConeNodeGL::out(ostream& o) const
+std::ostream & ConeNodeGL::out(std::ostream& o) const
 {
   o << '(' << radius 
     << ',' << height
@@ -54,48 +54,48 @@ ostream & ConeNodeGL::out(ostream& o) const
   return o;
 }
 
-istream & ConeNodeGL::in(istream& is)
+std::istream & ConeNodeGL::in(std::istream& is)
 {
   char c;
   is >> c;
   if(c != '(')
     {
-      cout << "Bad format for ConeNodeGL: " << c << endl;
+      std::cout << "Bad format for ConeNodeGL: " << c << std::endl;
       exit(1);
     }
   is >> radius >> c;
   if(c != ',')
     {
-      cout << "Bad format for ConeNodeGL\n";
+      std::cout << "Bad format for ConeNodeGL\n";
       exit(1);
     }
   is >> height >> c;
   if(c != ',')
     {
-      cout << "Bad format for ConeNodeGL\n";
+      std::cout << "Bad format for ConeNodeGL\n";
       exit(1);
     }
   is >> slices >> c;
   if(c != ',')
     {
-      cout << "Bad format for ConeNodeGL\n";
+      std::cout << "Bad format for ConeNodeGL\n";
       exit(1);
     }
   is >> stacks >> c;
   if(c != ')')
     {
-      cout << "Bad format for ConeNodeGL\n";
+      std::cout << "Bad format for ConeNodeGL\n";
       exit(1);
     }
   return is;
 }
 
-istream& operator>>(istream &is, ConeNodeGL& p)
+std::istream& operator>>(std::istream &is, ConeNodeGL& p)
 {
   return p.in(is);
 }
 
-ostream& operator<<(ostream &o, const ConeNodeGL& p)
+std::ostream& operator<<(std::ostream &o, const ConeNodeGL& p)
 {
   return p.out(o);
 }

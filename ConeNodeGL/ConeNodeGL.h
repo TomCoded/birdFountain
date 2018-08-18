@@ -23,8 +23,8 @@ class ConeNodeGL : public NodeGL
 
   void ActionGL();
 
-  istream& in(istream&);
-  ostream& out(ostream&) const;
+  std::istream& in(std::istream&);
+  std::ostream& out(std::ostream&) const;
 
  protected:
   double radius;
@@ -33,6 +33,6 @@ class ConeNodeGL : public NodeGL
   int slices;
 };
 
-istream& operator>>(istream &is, ConeNodeGL& p);
+std::istream& operator>>(std::istream &is, ConeNodeGL& p);
 
-ostream& operator<<(ostream &o, const ConeNodeGL& p);
+std::ostream& operator<<(std::ostream &o, const ConeNodeGL& p);

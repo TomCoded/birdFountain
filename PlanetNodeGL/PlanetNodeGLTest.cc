@@ -11,14 +11,14 @@
 
 int main() {
   PlanetNodeGL c1;
-  cout << c1 << endl;
+  std::cout << c1 << std::endl;
   PlanetNodeGL c2(c1);
-  cout << c2 << endl;
+  std::cout << c2 << std::endl;
   PlanetNodeGL c3(1.0,1,1);
-  cout << c3 << endl;
-  c3.out(cout);
-  cout << "Enter one:";
-  c2.in(cin);
-  cout << endl << c2 << endl;
+  std::cout << c3 << std::endl;
+  c3.out(std::cout);
+  std::cout << "Enter one:";
+  c2.in(std::cin);
+  std::cout << std::endl << c2 << std::endl;
   return 0;
 }

@@ -54,7 +54,7 @@ void SinSpinNodeGL::ActionGL()
 	    );
 }
 
-ostream & SinSpinNodeGL::out(ostream& o) const
+std::ostream & SinSpinNodeGL::out(std::ostream& o) const
 {
   o << '(' << axis
     << ',' << amplitude
@@ -64,37 +64,37 @@ ostream & SinSpinNodeGL::out(ostream& o) const
   return o;
 }
 
-istream & SinSpinNodeGL::in(istream& is)
+std::istream & SinSpinNodeGL::in(std::istream& is)
 {
   char c;
   is >> c;
   if(c != '(')
     {
-      cout << "Bad format for SinSpinNodeGL: " << c << endl;
+      std::cout << "Bad format for SinSpinNodeGL: " << c << std::endl;
       exit(1);
     }
   is >> axis >> c;
   if(c != ',')
     {
-      cout << "Bad format for SinSpinNodeGL\n";
+      std::cout << "Bad format for SinSpinNodeGL\n";
       exit(1);
     }
   is >> amplitude >> c;
   if(c != ',')
     {
-      cout << "Bad format for SinSpinNodeGL\n";
+      std::cout << "Bad format for SinSpinNodeGL\n";
       exit(1);
     }
   is >> start >> c;
   if(c != ',')
     {
-      cout << "Bad format for SinSpinNodeGL\n";
+      std::cout << "Bad format for SinSpinNodeGL\n";
       exit(1);
     }
   is >> velocity >> c;
   if(c != ')')
     {
-      cout << "Bad format for SinSpinNodeGL\n";
+      std::cout << "Bad format for SinSpinNodeGL\n";
       exit(1);
     }
   DEGREES_TO_RADIANS(start);
@@ -103,12 +103,12 @@ istream & SinSpinNodeGL::in(istream& is)
   return is;
 }
 
-istream& operator>>(istream &is, SinSpinNodeGL& p)
+std::istream& operator>>(std::istream &is, SinSpinNodeGL& p)
 {
   return p.in(is);
 }
 
-ostream& operator<<(ostream &o, const SinSpinNodeGL& p)
+std::ostream& operator<<(std::ostream &o, const SinSpinNodeGL& p)
 {
   return p.out(o);
 }

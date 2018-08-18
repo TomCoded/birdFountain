@@ -23,8 +23,8 @@ class TorusNodeGL : public NodeGL
 
   void ActionGL();
 
-  istream& in(istream&);
-  ostream& out(ostream&) const;
+  std::istream& in(std::istream&);
+  std::ostream& out(std::ostream&) const;
 
  protected:
   double smallRadius;
@@ -33,6 +33,6 @@ class TorusNodeGL : public NodeGL
   int slices;
 };
 
-istream& operator>>(istream &is, TorusNodeGL& p);
+std::istream& operator>>(std::istream &is, TorusNodeGL& p);
 
-ostream& operator<<(ostream &o, const TorusNodeGL& p);
+std::ostream& operator<<(std::ostream &o, const TorusNodeGL& p);

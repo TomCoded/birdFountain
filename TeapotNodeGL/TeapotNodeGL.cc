@@ -32,24 +32,24 @@ void TeapotNodeGL::ActionGL()
     glutWireTeapot(size);
 }
 
-ostream & TeapotNodeGL::out(ostream& o) const
+std::ostream & TeapotNodeGL::out(std::ostream& o) const
 {
   o << size;
   return o;
 }
 
-istream & TeapotNodeGL::in(istream& is)
+std::istream & TeapotNodeGL::in(std::istream& is)
 {
   is >> size;
   return is;
 }
 
-istream& operator>>(istream &is, TeapotNodeGL& p)
+std::istream& operator>>(std::istream &is, TeapotNodeGL& p)
 {
   return p.in(is);
 }
 
-ostream& operator<<(ostream &o, const TeapotNodeGL& p)
+std::ostream& operator<<(std::ostream &o, const TeapotNodeGL& p)
 {
   return p.out(o);
 }

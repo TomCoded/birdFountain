@@ -22,22 +22,22 @@ void DodecahedronNodeGL::ActionGL()
     glutWireDodecahedron();
 }
 
-ostream & DodecahedronNodeGL::out(ostream& o) const
+std::ostream & DodecahedronNodeGL::out(std::ostream& o) const
 {
   return o;
 }
 
-istream & DodecahedronNodeGL::in(istream& is)
+std::istream & DodecahedronNodeGL::in(std::istream& is)
 {
   return is;
 }
 
-istream& operator>>(istream &is, DodecahedronNodeGL& p)
+std::istream& operator>>(std::istream &is, DodecahedronNodeGL& p)
 {
   return p.in(is);
 }
 
-ostream& operator<<(ostream &o, const DodecahedronNodeGL& p)
+std::ostream& operator<<(std::ostream &o, const DodecahedronNodeGL& p)
 {
   return p.out(o);
 }

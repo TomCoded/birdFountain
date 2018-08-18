@@ -8,7 +8,7 @@
 #include <unistd.h>
 #include <GL/glut.h>
 
-string g_fileName;
+std::string g_fileName;
 
 int main(int argc, char **argv) {
   //use double-buffering for smooth animation
@@ -17,16 +17,16 @@ int main(int argc, char **argv) {
   Scene * sc=0;
   while(c!='q')
     {
-      cout << "(q)uit, (f)ile:";
-      cin >> c;
+      std::cout << "(q)uit, (f)ile:";
+      std::cin >> c;
       if(c=='f')
 	{
 	  glutInit(&argc, argv);
 	  glutInitDisplayMode(GLUT_DOUBLE | GLUT_DEPTH);
 	  if(sc) delete sc;
 	  sc = new Scene();
-	  cout << "Enter file name: ";
-	  cin >> g_fileName;
+	  std::cout << "Enter file name: ";
+	  std::cin >> g_fileName;
 	  sc->ReadFile(g_fileName);
 	  sc->draw();
 	}

@@ -43,11 +43,11 @@
 
 #define BADFORMAT(s) \
 { \
-cerr << "Input file syntax error: " << s << endl; \
+std::cerr << "Input file syntax error: " << s << std::endl; \
 exit(1); \
 }
 
-extern string g_fileName;
+extern std::string g_fileName;
 Scene * g_Scene;
 int g_nSpeed;
 
@@ -66,10 +66,10 @@ Scene::Scene():
   width(200),
   height(200)
 {
-  cameras = new vector<Camera *>();
-  NodeGLs = new vector<NodeGL *>();
-  LightNodeGLs = new vector<LightNodeGL *>();
-  CustomNodeGLs = new vector<CustomNodeGL *>();
+  cameras = new std::vector<Camera *>();
+  NodeGLs = new std::vector<NodeGL *>();
+  LightNodeGLs = new std::vector<LightNodeGL *>();
+  CustomNodeGLs = new std::vector<CustomNodeGL *>();
   myLightIDs = GetLightArray(); 
   lmodel_ambient[0]=lmodel_ambient[1]=lmodel_ambient[2]=0.2;
   lmodel_ambient[3]=1.0;
@@ -82,28 +82,28 @@ Scene::~Scene()
 {
   delete myLightIDs;
 
-  vector<Camera *>::iterator itCDestroyer = cameras->begin();
+  std::vector<Camera *>::iterator itCDestroyer = cameras->begin();
   while(itCDestroyer != cameras->end() )
     {
       delete (*itCDestroyer);
       itCDestroyer++;
     }
 
-  vector<NodeGL *>::iterator itNDestroyer = NodeGLs->begin();
+  std::vector<NodeGL *>::iterator itNDestroyer = NodeGLs->begin();
   while(itNDestroyer != NodeGLs->end())
     {
       delete (*itNDestroyer);
       itNDestroyer++;
     }
 
-  vector<CustomNodeGL *>::iterator itDestroyer = CustomNodeGLs->begin();
+  std::vector<CustomNodeGL *>::iterator itDestroyer = CustomNodeGLs->begin();
   while(itDestroyer != CustomNodeGLs->end())
     {
       delete (*itDestroyer);
       itDestroyer++;
     }
 
-  vector<LightNodeGL *>::iterator itLNDestroyer = LightNodeGLs->begin();
+  std::vector<LightNodeGL *>::iterator itLNDestroyer = LightNodeGLs->begin();
   while(itLNDestroyer != LightNodeGLs->end())
     {
       delete (*itLNDestroyer);
@@ -118,27 +118,27 @@ Scene::~Scene()
 //flush existing info and read new file
 void Scene::newfile() 
 {
-  vector<Camera *>::iterator itCDestroyer = cameras->begin();
+  std::vector<Camera *>::iterator itCDestroyer = cameras->begin();
   while(itCDestroyer != cameras->end() )
     {
       delete (*itCDestroyer);
       itCDestroyer++;
     }
 
-  vector<NodeGL *>::iterator itNDestroyer = NodeGLs->begin();
+  std::vector<NodeGL *>::iterator itNDestroyer = NodeGLs->begin();
   while(itNDestroyer != NodeGLs->end())
     {
       delete (*itNDestroyer);
       itNDestroyer++;
     }
-  vector<CustomNodeGL *>::iterator itDestroyer = CustomNodeGLs->begin();
+  std::vector<CustomNodeGL *>::iterator itDestroyer = CustomNodeGLs->begin();
   while(itDestroyer != CustomNodeGLs->end())
     {
       delete (*itDestroyer);
       itDestroyer++;
     }
 
-  vector<LightNodeGL *>::iterator itLNDestroyer = LightNodeGLs->begin();
+  std::vector<LightNodeGL *>::iterator itLNDestroyer = LightNodeGLs->begin();
   while(itLNDestroyer != LightNodeGLs->end())
     {
       delete (*itLNDestroyer);
@@ -154,12 +154,12 @@ void Scene::newfile()
   delete NodeGLs;
   delete LightNodeGLs;
   delete CustomNodeGLs;
-  CustomNodeGLs = new vector<CustomNodeGL *>();
-  cameras = new vector<Camera *>();
-  NodeGLs = new vector<NodeGL *>();
-  LightNodeGLs = new vector<LightNodeGL *>();
-  cout << "Enter file name: ";
-  cin >> g_fileName;
+  CustomNodeGLs = new std::vector<CustomNodeGL *>();
+  cameras = new std::vector<Camera *>();
+  NodeGLs = new std::vector<NodeGL *>();
+  LightNodeGLs = new std::vector<LightNodeGL *>();
+  std::cerr << "Enter file name: ";
+  std::cin >> g_fileName;
   ReadFile(g_fileName);
   glutReshapeWindow(width,height);
   initWindowInfo();
@@ -169,27 +169,27 @@ void Scene::newfile()
 //flush existing info and read new file
 void Scene::reload() 
 {
-  vector<Camera *>::iterator itCDestroyer = cameras->begin();
+  std::vector<Camera *>::iterator itCDestroyer = cameras->begin();
   while(itCDestroyer != cameras->end() )
     {
       delete (*itCDestroyer);
       itCDestroyer++;
     }
 
-  vector<NodeGL *>::iterator itNDestroyer = NodeGLs->begin();
+  std::vector<NodeGL *>::iterator itNDestroyer = NodeGLs->begin();
   while(itNDestroyer != NodeGLs->end())
     {
       delete (*itNDestroyer);
       itNDestroyer++;
     }
-  vector<CustomNodeGL *>::iterator itDestroyer = CustomNodeGLs->begin();
+  std::vector<CustomNodeGL *>::iterator itDestroyer = CustomNodeGLs->begin();
   while(itDestroyer != CustomNodeGLs->end())
     {
       delete (*itDestroyer);
       itDestroyer++;
     }
 
-  vector<LightNodeGL *>::iterator itLNDestroyer = LightNodeGLs->begin();
+  std::vector<LightNodeGL *>::iterator itLNDestroyer = LightNodeGLs->begin();
   while(itLNDestroyer != LightNodeGLs->end())
     {
       delete (*itLNDestroyer);
@@ -205,10 +205,10 @@ void Scene::reload()
   delete NodeGLs;
   delete LightNodeGLs;
   delete CustomNodeGLs;
-  CustomNodeGLs = new vector<CustomNodeGL *>();
-  cameras = new vector<Camera *>();
-  NodeGLs = new vector<NodeGL *>();
-  LightNodeGLs = new vector<LightNodeGL *>();
+  CustomNodeGLs = new std::vector<CustomNodeGL *>();
+  cameras = new std::vector<Camera *>();
+  NodeGLs = new std::vector<NodeGL *>();
+  LightNodeGLs = new std::vector<LightNodeGL *>();
   ReadFile(g_fileName);
   glutReshapeWindow(width,height);
   initWindowInfo();
@@ -216,11 +216,11 @@ void Scene::reload()
 }
 
 // Scene features
-void Scene::ReadFile(string fileName) {
-  //  string fileName;
+void Scene::ReadFile(std::string fileName) {
+  //  std::string fileName;
   int nDoingCustom=false;
 
-  vector<NodeGL *> * masterList = NodeGLs; //to hold regular one when
+  std::vector<NodeGL *> * masterList = NodeGLs; //to hold regular one when
   //CustomNodeGL is being created
 
   int numSurfaces = 0;
@@ -229,8 +229,8 @@ void Scene::ReadFile(string fileName) {
 
   char c; //scratch
 
-  //  cout << "Enter file name: ";
-  //  cin >> fileName;
+  //  std::cerr << "Enter file name: ";
+  //  std::cin >> fileName;
 
   // create an input filestream
   ifstream inFile(fileName.c_str());
@@ -239,25 +239,25 @@ void Scene::ReadFile(string fileName) {
 
   // check for success of stream constructor
   if(!inFile) { // could not open file
-    cerr << "Could not open file: " << fileName << "; exiting...";
+    std::cerr << "Could not open file: " << fileName << "; exiting...";
     exit(1);
   }
 
   // read in contents
-  string keyword;
+  std::string keyword;
   inFile >> keyword;
   while(!inFile.eof()) {
     if(keyword == "numSurfaces") {
       inFile >> numSurfaces;
-      //      cout << "numSurfaces = " << numSurfaces << endl;
+      //      std::cerr << "numSurfaces = " << numSurfaces << std::endl;
     }
     else if(keyword == "include") {
-      string name;
+      std::string name;
       inFile >> name;
       ReadFile(name);
     }
     else if(keyword == "wireframe") {
-      string onOrOff;
+      std::string onOrOff;
       inFile >> onOrOff;
       if(onOrOff=="on")
 	wireFrame=true;
@@ -265,7 +265,7 @@ void Scene::ReadFile(string fileName) {
 	wireFrame=false;
       else
 	{
-	  cerr << "wireFrame keyword syntax error\n";
+	  std::cerr << "wireFrame keyword syntax error\n";
 	  exit(1);
 	}
     }
@@ -273,10 +273,10 @@ void Scene::ReadFile(string fileName) {
       inFile >> numLights;
       if(numLights > GL_MAX_LIGHTS)
 	{
-	  cerr << "openGL on this machine only supports "
+	  std::cerr << "openGL on this machine only supports "
 	       << GL_MAX_LIGHTS << " light sources.\n";
 	}
-      //      cout << "numLights = " << numLights << endl;
+      //      std::cerr << "numLights = " << numLights << std::endl;
     }
     else if(keyword == "windowDims") {
       inFile >> c;
@@ -310,25 +310,25 @@ void Scene::ReadFile(string fileName) {
       inFile >> c;
       if(c!='(')
 	{
-	  cerr << "Bad Format for pointLight\n";
+	  std::cerr << "Bad Format for pointLight\n";
 	  exit(1);
 	}
       inFile >> loc >> c;
       if(c!=',')
 	{
-	  cerr << "Bad Format for pointLight\n";
+	  std::cerr << "Bad Format for pointLight\n";
 	  exit(1);
 	}
       inFile >> ambient >> c;
       if(c!=',')
 	{
-	  cerr << "Bad Format for pointLight\n";
+	  std::cerr << "Bad Format for pointLight\n";
 	  exit(1);
 	}
       inFile >> diffuse >> c;
       if(c!=',')
 	{
-	  cerr << "Bad Format for pointLight\n";
+	  std::cerr << "Bad Format for pointLight\n";
 	  exit(1);
 	}     
       inFile >> specular;
@@ -348,25 +348,25 @@ void Scene::ReadFile(string fileName) {
       inFile >> c;
       if(c!='(')
 	{
-	  cerr << "Bad Format for Directional Light\n";
+	  std::cerr << "Bad Format for Directional Light\n";
 	  exit(1);
 	}
       inFile >> direction >> c;
       if(c!=',')
 	{
-	  cerr << "Bad Format for Directional Light\n";
+	  std::cerr << "Bad Format for Directional Light\n";
 	  exit(1);
 	}
       inFile >> ambient >> c;
       if(c!=',')
 	{
-	  cerr << "Bad Format for Directional Light\n";
+	  std::cerr << "Bad Format for Directional Light\n";
 	  exit(1);
 	}
       inFile >> diffuse >> c;
       if(c!=',')
 	{
-	  cerr << "Bad Format for Directional Light\n";
+	  std::cerr << "Bad Format for Directional Light\n";
 	  exit(1);
 	}     
       inFile >> specular;
@@ -388,19 +388,19 @@ void Scene::ReadFile(string fileName) {
       inFile >> c;
       if(c!='(')
 	{
-	  cerr << "Bad Format for Orient\n";
+	  std::cerr << "Bad Format for Orient\n";
 	  exit(1);
 	}
       inFile >> fromAxis >> c;
       if(c!=',')
 	{
-	  cerr << "Bad Format for Orient\n";
+	  std::cerr << "Bad Format for Orient\n";
 	  exit(1);
 	}
       inFile >> toAxis >> c;
       if(c!=')')
 	{
-	  cerr << "Bad Format for Orient\n";
+	  std::cerr << "Bad Format for Orient\n";
 	  exit(1);
 	}
       NodeGLs->push_back(new OrientNodeGL(fromAxis,toAxis));
@@ -410,19 +410,19 @@ void Scene::ReadFile(string fileName) {
       inFile >> c;
       if(c!='(')
 	{
-	  cerr << "Bad Format for spin\n";
+	  std::cerr << "Bad Format for spin\n";
 	  exit(1);
 	}
       inFile >> axis >> c;
       if(c!=',')
 	{
-	  cerr << "Bad Format for spin\n";
+	  std::cerr << "Bad Format for spin\n";
 	  exit(1);
 	}
       inFile >> velocity >> c;
       if(c!=')')
 	{
-	  cerr << "Bad Format for spin\n";
+	  std::cerr << "Bad Format for spin\n";
 	  exit(1);
 	}
       NodeGLs->push_back(new SpinNodeGL(axis,velocity));
@@ -434,28 +434,28 @@ void Scene::ReadFile(string fileName) {
       inFile >> ch;
       if(ch!='(')
 	{
-	  cout << "bad format for Orbit\n";
+	  std::cerr << "bad format for Orbit\n";
 	  break;
 	}
       inFile >> startAngle;
       inFile >> ch;
       if(ch!=',')
 	{
-	  cout << "Bad format for Orbit\n";
+	  std::cerr << "Bad format for Orbit\n";
 	  break;
 	}
       inFile >> velocity;
       inFile >> ch;
       if(ch!=',')
 	{
-	  cout << "Bad format for Orbit\n";
+	  std::cerr << "Bad format for Orbit\n";
 	  break;
 	}      
       inFile >> distance;
       inFile >> ch;
       if(ch!=')')
 	{
-	  cout << "Bad format for Orbit\n";
+	  std::cerr << "Bad format for Orbit\n";
 	  break;
 	}      
       //in the x-y plane
@@ -466,21 +466,21 @@ void Scene::ReadFile(string fileName) {
       inFile >> ch;
       if(ch!='(')
 	{
-	  cout << "bad format for rotation\n";
+	  std::cerr << "bad format for rotation\n";
 	  break;
 	}
       inFile >> a;
       inFile >> ch;
       if(ch!=',')
 	{
-	  cout << "Bad format for rotation\n";
+	  std::cerr << "Bad format for rotation\n";
 	  break;
 	}
       inFile >> d;
       inFile >> ch;
       if(ch!=')')
 	{
-	  cout << "Bad format for rotation\n";
+	  std::cerr << "Bad format for rotation\n";
 	  break;
 	}
       RotateNodeGL * myNode = 
@@ -492,25 +492,25 @@ void Scene::ReadFile(string fileName) {
       inFile >> c;
       if(c != '(')
 	{
-	  cout << "Bad format for PlanetNodeGL: " << c << endl;
+	  std::cerr << "Bad format for PlanetNodeGL: " << c << std::endl;
 	  exit(1);
 	}
       inFile >> planetRadius >> c;
       if(c != ',')
 	{
-	  cout << "Bad format for PlanetNodeGL !,\n";
+	  std::cerr << "Bad format for PlanetNodeGL !,\n";
 	  exit(1);
 	}
       inFile >> slices >> c;
       if(c != ',')
 	{
-	  cout << "Bad format for PlanetNodeGL !,2\n";
+	  std::cerr << "Bad format for PlanetNodeGL !,2\n";
 	  exit(1);
 	}
       inFile >> stacks >> c;
       if(c != ')')
 	{
-	  cout << "Bad format for PlanetNodeGL !)\n";
+	  std::cerr << "Bad format for PlanetNodeGL !)\n";
 	  exit(1);
 	}
       PlanetNodeGL * myPlanet =
@@ -522,8 +522,8 @@ void Scene::ReadFile(string fileName) {
       NodeGLs->push_back(myPlanet);
     }
     else if(keyword == "spotLight") {
-      cout << "spotLight ";
-      cout << "skipping parameters..." << endl;
+      std::cerr << "spotLight ";
+      std::cerr << "skipping parameters..." << std::endl;
       skipDescription(inFile);
     }
     else if(keyword == "material") {
@@ -633,11 +633,11 @@ void Scene::ReadFile(string fileName) {
       {
 	if(nDoingCustom)
 	  {
-	    cerr << "Cannot define custom item while defining custom item\n";
+	    std::cerr << "Cannot define custom item while defining custom item\n";
 	    exit(1);
 	  }
 	nDoingCustom = true;
-	NodeGLs = new vector<NodeGL *>();
+	NodeGLs = new std::vector<NodeGL *>();
       }
     else if(keyword == "endcustom")
       {
@@ -653,9 +653,9 @@ void Scene::ReadFile(string fileName) {
       }
     else if(keyword == "insertcustom")
       {
-	string szNodeName;
+	std::string szNodeName;
 	inFile >> szNodeName;
-	vector<CustomNodeGL *>::iterator itCust = 
+	std::vector<CustomNodeGL *>::iterator itCust = 
 	  CustomNodeGLs->begin();
 	while(itCust != CustomNodeGLs->end())
 	  {
@@ -675,7 +675,7 @@ void Scene::ReadFile(string fileName) {
       inFile.ignore(1000,'\n'); // skip up to and including next end-of-line
     }
     else {
-      cout << "Unrecognized keyword: " << keyword << "  Exiting..." << endl;
+      std::cerr << "Unrecognized keyword: " << keyword << "  Exiting..." << std::endl;
       exit(1);
     }
     inFile >> keyword;
@@ -686,7 +686,7 @@ void Scene::ReadFile(string fileName) {
   getCamera()->setSampleDims(height,width);
   if(NodeGLs!=masterList)
     {
-      cerr << "unclosed custom node\n";
+      std::cerr << "unclosed custom node\n";
       NodeGLs=masterList;
     }
 }
@@ -715,7 +715,7 @@ void Scene::draw()
 }
 
 //returns a pointer to a vector of all NodeGL's in the scene
-vector<NodeGL *> * Scene::getNodeGLs()
+std::vector<NodeGL *> * Scene::getNodeGLs()
 {
   return NodeGLs;
 }
@@ -761,7 +761,7 @@ void Scene::initWindowInfo(void)
 			 vvFar
 			 );
       addCamera(myCam);
-      cerr << "Creating a default camera.\n";
+      std::cerr << "Creating a default camera.\n";
     }
   glMatrixMode(GL_MODELVIEW);
   glLoadIdentity();
@@ -784,7 +784,7 @@ void Scene::initWindowInfo(void)
  if(LightNodeGLs->size())
    {
      int i=0;
-     vector<LightNodeGL *>::iterator itLightNodeGLs =
+     std::vector<LightNodeGL *>::iterator itLightNodeGLs =
        LightNodeGLs->begin();
      while(itLightNodeGLs != LightNodeGLs->end())
        {

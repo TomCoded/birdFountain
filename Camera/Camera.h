@@ -70,11 +70,11 @@ public:
   void rotate(double angle, const Point4Dd& dir);
 
   // append camera to stream
-  ostream& out(ostream& os) const;
+  std::ostream& out(std::ostream& os) const;
 
   // read camera from stream
   // skips leading and internal whitespace
-  istream& in(istream& is);
+  std::istream& in(std::istream& is);
 
   // Compute camera coordinate frame from eye, lookAt and up
   void setCameraCoordSys();
@@ -89,10 +89,10 @@ public:
 // Non-member functions for the type
 
 // read Camera from stream
-istream& operator>>(istream & is, Camera& c);
+std::istream& operator>>(std::istream & is, Camera& c);
 
 // write Camera to stream
-ostream& operator<<(ostream & os, const Camera& c);
+std::ostream& operator<<(std::ostream & os, const Camera& c);
 
 #endif CAMERA_H
 

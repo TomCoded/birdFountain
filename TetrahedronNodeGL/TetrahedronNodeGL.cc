@@ -22,22 +22,22 @@ void TetrahedronNodeGL::ActionGL()
     glutWireTetrahedron();
 }
 
-ostream & TetrahedronNodeGL::out(ostream& o) const
+std::ostream & TetrahedronNodeGL::out(std::ostream& o) const
 {
   return o;
 }
 
-istream & TetrahedronNodeGL::in(istream& is)
+std::istream & TetrahedronNodeGL::in(std::istream& is)
 {
   return is;
 }
 
-istream& operator>>(istream &is, TetrahedronNodeGL& p)
+std::istream& operator>>(std::istream &is, TetrahedronNodeGL& p)
 {
   return p.in(is);
 }
 
-ostream& operator<<(ostream &o, const TetrahedronNodeGL& p)
+std::ostream& operator<<(std::ostream &o, const TetrahedronNodeGL& p)
 {
   return p.out(o);
 }

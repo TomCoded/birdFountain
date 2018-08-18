@@ -3,7 +3,7 @@
 //(C)  Tom White
 
 #include "PopNodeGL.h"
-#include <iostream.h>
+#include <iostream>
 #include <GL/glut.h>
 
 PopNodeGL::PopNodeGL() 
