@@ -48,6 +48,10 @@ From the project root directory:
 
 `sh demo.sh`
 
+### Note
+
+Several files were provided by an Anonymous contributor as a mini-library for the original graphics project. (e.g. Material, Ray, Camera, and the minimal linear algebra library). The contributor has consented to use and publication of this work, including under an unspecified BSD-type license.
+
 ### Sample Videos
 
  <video controls>

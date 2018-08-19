@@ -101,10 +101,9 @@ These files were provided by Anonymous1 for the project.  They have not been
 touched.
 ----------
 Camera
+Material
 TransformMaker
 Ray
-Makefile
-include.mak
 
 Contains some global define statements
 ------
