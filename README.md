@@ -48,3 +48,17 @@ From the project root directory:
 
 `sh demo.sh`
 
+### Sample Videos
+
+ <video controls>
+  <source src="https://kingcountybusinesslaw.com/misc/birdFountain1.ogv" type="video/ogg">
+Your browser does not support the video tag.
+</video>
+
+<video controls>
+  <source src="https://kingcountybusinesslaw.com/misc/birdFountain2.ogv" type="video/ogg">
+Your browser does not support the video tag.
+</video>
+
+<a href="https://kingcountybusinesslaw.com/misc/birdFountain1.ogv">Link to video</a>
+<a href="https://kingcountybusinesslaw.com/misc/birdFountain2.ogv">Link to video</a>
