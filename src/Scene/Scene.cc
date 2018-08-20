@@ -47,7 +47,7 @@ std::cerr << "Input file syntax error: " << s << std::endl; \
 exit(1); \
 }
 
-extern std::string g_fileName;
+std::string g_fileName;
 Scene * g_Scene;
 int g_nSpeed;
 

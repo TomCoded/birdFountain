@@ -8,7 +8,7 @@
 #include <unistd.h>
 #include <GL/glut.h>
 
-std::string g_fileName;
+extern std::string g_fileName;
 
 int main(int argc, char **argv) {
   //use double-buffering for smooth animation
